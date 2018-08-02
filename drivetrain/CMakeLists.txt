@@ -199,3 +199,7 @@ add_executable(motor_control src/motor_control.cpp)
 target_link_libraries(motor_control ${catkin_LIBRARIES} ${wiringPi_LIB})
 add_dependencies(motor_control wiringPi)
 
+add_executable(test_motor_control src/test_motor_control.cpp)
+target_link_libraries(test_motor_control ${catkin_LIBRARIES} ${wiringPi_LIB})
+add_dependencies(test_motor_control wiringPi)
+

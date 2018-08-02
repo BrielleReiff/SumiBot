@@ -81,5 +81,42 @@ class RRB3 {
             digitalWrite(right_1_pin, right_dir);
             digitalWrite(right_2_pin, !right_dir);
         }
+
+        void forward(float seconds=0, float speed=1) {
+            set_motors(speed, 0, speed, 0);
+            if (seconds > 0) {
+                std::this_thread::sleep_for(std::chrono::duration<float>(seconds));
+                stop();
+            }
+        }
+
+        void stop() {
+            set_motors(0, 0, 0, 0);
+        }
+
+        void reverse(float seconds=0, float speed=1) {
+            set_motors(speed, 1, speed, 1);
+            if (seconds > 0) {
+                std::this_thread::sleep_for(std::chrono::duration<float>(seconds));
+                stop();
+            }
+        }
+
+        void left(float seconds=0, float speed=0.5) {
+            set_motors(speed, 1, speed, 0);
+            if (seconds > 0) {
+                std::this_thread::sleep_for(std::chrono::duration<float>(seconds));
+                stop();
+            }
+        }
+
+        void right(float seconds=0, float speed=0.5) {
+            set_motors(speed, 0, speed, 1);
+            if (seconds > 0) {
+                std::this_thread::sleep_for(std::chrono::duration<float>(seconds));
+                stop();
+            }
+        }
+
     };
 
