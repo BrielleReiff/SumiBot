@@ -18,7 +18,7 @@ int main(int argc, char **argv)
   ros::Rate loop_rate(100);
 
   // Initialize motors
-  RRB3 rrb3(12, 12);
+  RRB3 rrb3;
 
   int count = 0;
   while (ros::ok())
