@@ -9,27 +9,27 @@ class RRB3 {
 
     private:
         const int motor_delay = 200;  // ms
-        const float right_pwm_pin = 15;
-        const float right_1_pin = 12;
-        const float right_2_pin = 6;
-        const float left_pwm_pin = 5;
-        const float left_1_pin = 0;
-        const float left_2_pin = 7;
-        const float sw1_pin = 14;
-        const float sw2_pin = 13;
-        const float led1_pin = 10;
-        const float led2_pin = 11;
-        const float oc1_pin = 3;
-        const float oc2_pin = 2;
-        const float trigger_pin = 1;
-        const float echo_pin = 4;
+        const int right_pwm_pin = 15;
+        const int right_1_pin = 12;
+        const int right_2_pin = 6;
+        const int left_pwm_pin = 5;
+        const int left_1_pin = 0;
+        const int left_2_pin = 7;
+        const int sw1_pin = 14;
+        const int sw2_pin = 13;
+        const int led1_pin = 10;
+        const int led2_pin = 11;
+        const int oc1_pin = 3;
+        const int oc2_pin = 2;
+        const int trigger_pin = 1;
+        const int echo_pin = 4;
 
         float left_pwm = 0;  // Ranges 0 -> 1
         float right_pwm = 0;  // Ranges 0 -> 1
         float pwm_scale = 0;
 
-        float old_left_dir = -1;
-        float old_right_dir = -1;
+        int old_left_dir = -1;
+        int old_right_dir = -1;
 
         float motor_voltage, battery_voltage;
     public:
